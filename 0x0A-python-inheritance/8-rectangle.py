@@ -1,16 +1,13 @@
 #!/usr/bin/python3
+""" module subclass rectangle
+"""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
-"""
-Module which intiate and valididate it's argument by using Integer validator
-"""
+
 
 class Rectangle(BaseGeometry):
-      """
-      The subclass of the BaseGeometry Class
-      """
+    """Rectangle that inherits from BaseGeometry"""
     def __init__(self, width, height):
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-
-        self.__width = width
+        BaseGeometry.integer_validator(self, 'height', height)
         self.__height = height
+        BaseGeometry.integer_validator(self, 'width', width)
+        self.__width = width

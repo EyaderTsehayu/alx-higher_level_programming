@@ -1,25 +1,20 @@
 #!/usr/bin/python3
+""" module subclass rectangle
+"""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
-"""
-Module which calculate the are of a recangle 
-"""
+
 
 class Rectangle(BaseGeometry):
-    """
-    A rectangle class which the subclass of BaseGeometry
-    """
+    """Rectangle that inherits from BaseGeometry"""
     def __init__(self, width, height):
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-
-        self.__width = width
+        BaseGeometry.integer_validator(self, 'height', height)
         self.__height = height
+        BaseGeometry.integer_validator(self, 'width', width)
+        self.__width = width
 
     def area(self):
-    """
-    Calculate The are of the rectangle and return the result
-    """
         return self.__width * self.__height
 
     def __str__(self):
-        return '[Rectangle] ' + str(self.__width) + '/' + str(self.__height)
+
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)

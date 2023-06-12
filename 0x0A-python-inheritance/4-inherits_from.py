@@ -1,20 +1,15 @@
 #!/usr/bin/python3
 """
-Module which has a function inherits_from
+module only sub class of
 """
 
 
 def inherits_from(obj, a_class):
+    """returns True if the object is an instance of a class
+       that inherited (directly or indirectly) from the specified class;
+       otherwise False.
     """
-    This function returns true if obj is the instance of 
-    a_class or it is the instance of it's subclass
-
-    Args:
-        obj(a_class): The object of a_class.
-        a_class: The class.
-    """
-
-    if isinstance(obj, a_class) and \
-       issubclass(a_class, obj.__class__) is False:
-        return True
-    return False
+    if type(obj) != a_class:
+        return issubclass(type(obj), a_class)
+    else:
+        return False
